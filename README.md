@@ -12,6 +12,6 @@ chmod +x yesquid_task_worker.sh
 ```
 
 ## Source
-/data/data/com.termux/files/home/FacePrintPay/FacePrintPay/artifacts/agents/yesquid_task_worker.sh
+/data/data/com.termux/files/home/FacePrintPay/artifacts/agents/yesquid_task_worker.sh
 
 Built by Constellation 25 — FacePrintPay / Cygel White
