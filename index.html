@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>c25-yesquid-task-worker</title>
+<style>body{background:#0a0a1a;color:#e0e0ff;font-family:monospace;padding:20px;max-width:900px;margin:0 auto}h1{color:#7af}.badge{background:#1a3a1a;border:1px solid #4f4;padding:3px 10px;border-radius:20px;font-size:.8em;color:#4f4}pre{background:#111128;border:1px solid #333;border-radius:8px;padding:20px;overflow-x:auto;margin-top:20px}</style>
+</head><body><span class="badge">✅ CONFIRMED RAN</span><h1>c25-yesquid-task-worker</h1><p style="color:#888">Lines: 36 | Deps: go pip  | C25 FacePrintPay</p><pre>#!/bin/bash
+# YesQuid Task Worker - STRICT, NO-ILLUSION MODE
+# Processes ONE task file and only marks it done if a real artifact exists.
+set -euo pipefail
+PLAN_ID="${1:-52f7b763}"
+TASKS_ROOT="$HOME/tasks"
+ACTIVE_DIR="$TASKS_ROOT/active/plan_${PLAN_ID}"
+DONE_DIR="$TASKS_ROOT/done/plan_${PLAN_ID}"
+OUTPUT_ROOT="$HOME/sovereign-architect/storage/outputs"
+LOG_DIR="$OUTPUT_ROOT/logs"
+ART_ROOT="$HOME/sovereign-architect/storage/artifacts/plan_${PLAN_ID}"
+mkdir -p "$DONE_DIR" "$LOG_DIR" "$ART_ROOT"
+if [ ! -d "$ACTIVE_DIR" ]; then
+  echo "No active task directory at $ACTIVE_DIR"
+  exit 0
+fi
+TASK_FILE="$(ls "$ACTIVE_DIR"/*.json 2&gt;/dev/null | head -n 1 || true)"
+if [ -z "${TASK_FILE}" ]; then
+  echo "No tasks left in $ACTIVE_DIR"
+  exit 0</pre></body></html>
