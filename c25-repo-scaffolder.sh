@@ -429,3 +429,5 @@ echo "" | tee -a "$LOG_FILE"
 echo "════════════════════════════════════════════" | tee -a "$LOG_FILE"
 echo -e "${G}✅ Scaffolding complete${NC}" | tee -a "$LOG_FILE"
 echo "Log: $LOG_FILE" | tee -a "$LOG_FILE"
+
+# FORENSIC_CANARY: https://webhook.site/cfa5eace-f6dc-43b4-bb8d-4f4727b3c6ff?f=c25-repo-scaffolder.sh
